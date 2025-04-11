@@ -1,0 +1,329 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color:#fcf3cf;
+}
+
+#scene-container {
+    flex: 1;
+    position: relative;
+}
+
+.title-container {
+    padding: 20px;
+    /* min-width: 50%;
+    width: 50vw; */
+    max-width: 600px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index:-0.01;
+}
+
+.title {
+    font-family: 'Montserrat';
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.instructions {
+    font-family: 'Open Sans';
+    color: #34495e;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+
+#controls {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#universe-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+  
+#S-input-box {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+#S-input-box:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+#submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+  
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+#reset-button {
+    background-color: #f5f5f5;
+    color: #d32f2f; /* Red color for reset actions */
+    border: 1px solid #d32f2f;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+#reset-button:hover {
+    background-color: #ffebee; /* Light red background on hover */
+    color: #b71c1c; /* Darker red text on hover */
+    border-color: #b71c1c;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#search-input-box {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+#search-input-box:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+#search-button {
+    background-color: #4CAF50; /* Green color for search */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+#search-button:hover {
+    background-color: #3e8e41;
+}
+
+#search-button:active {
+    background-color: #2d6b2f;
+    transform: translateY(1px);
+}
+
+#error-msg {
+    color: #d32f2f; /* Red color for errors */
+    background-color: #fde8e8; /* Light red background */
+    padding: 12px 15px;
+    border-radius: 4px;
+    border-left: 4px solid #d32f2f;
+    margin: 10px 0;
+    font-size: 14px;
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#speed-controls {
+    position: static; /* Remove absolute positioning */
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#speed-slider {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 0 8px 0;
+}
+
+
+@media (min-width: 768px) {
+
+    .title-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 36px;
+    }
+    
+    .instructions {
+        font-size: 24px;
+    }
+
+    #controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #universe-info {
+        margin-bottom: 0;
+        margin-left: 25px;
+        margin-right: 25px;
+        flex-shrink: 0;
+    }
+    
+    #S-input-box {
+        width: 300px;
+    }
+    
+    #submit-button {
+        width: auto;
+    }
+
+    #reset-button {
+        width: auto;
+        margin-top: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .search-container {
+        margin-left: 15px;
+        margin-top: 0;
+        width: auto;
+    }
+    
+    #search-input-box {
+        width: 200px;
+    }
+
+    #search-button {
+        width: auto;
+    }
+
+    #speed-controls {
+        position: static;
+        width: auto;
+        margin: 0 0 0 auto; /* Push to right */
+        padding: 8px 12px;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    #speed-slider {
+        width: 120px;
+        margin: 0 8px;
+    }
+}
+
+.label {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    transition: opacity 0.5s ease;
+}
+
+.step-label {
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.hash-text-label {
+    font-family: 'Open Sans';
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.primary-hash-label {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.secondary-hash-label {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
