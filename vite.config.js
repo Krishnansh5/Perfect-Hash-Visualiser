@@ -12,4 +12,7 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true
   },
+  optimizeDeps: {
+    include: ['three'] // Add this if using npm installation
+  }
 })
