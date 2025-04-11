@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hash Table Visualisation</title>
+    <script type="module" crossorigin src="/assets/index-BNm399bY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B1iq5bB8.css">
+  </head>
+  <body>
+    <div id="scene-container"></div>
+    <div id="controls">
+      <div id="universe-info">
+        Universe: {0,1,2,3 ... 100}
+      </div>
+      <input type="text" id="S-input-box" placeholder="Enter set S (comma-separated)">
+      <button id="submit-button">Submit</button>
+      <div class="search-container">
+        <input type="text" id="search-input-box" placeholder="Search for an element" disabled="true">
+        <button id="search-button" disabled="true">Search</button>
+      </div>
+      <button id="reset-button">Reset</button>
+      <div id="error-msg"></div>
+      <div id="speed-controls">
+        <label for="speed-slider">Animation Speed:</label>
+        <input type="range" id="speed-slider" min="0.2" max="10" step="0.1" value="1">
+        <span id="speed-value">1x</span>
+      </div>
+    </div>
+  </body>
+</html>
